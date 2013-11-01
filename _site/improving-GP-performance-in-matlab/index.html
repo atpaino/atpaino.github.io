@@ -1,0 +1,269 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Improving Genetic Programming Performance in Matlab &#8211; Alex's Site</title>
+<meta name="description" content="Alex Paino's personal site and blog">
+<meta name="keywords" content="">
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Improving Genetic Programming Performance in Matlab">
+<meta property="og:description" content="Alex Paino's personal site and blog">
+<meta property="og:url" content="/improving-GP-performance-in-matlab">
+<meta property="og:site_name" content="Alex's Site">
+
+
+
+
+
+<link rel="canonical" href="/improving-GP-performance-in-matlab">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Alex's Site Feed">
+<link rel="author" href="https://plus.google.com/114327884541884793605?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.min.css">
+<!-- Webfonts -->
+<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body id="post" itemscope itemtype="http://schema.org/WebPage">
+
+<div class="navigation-wrapper">
+	<nav role="navigation" id="site-nav" class="animated drop" itemscope itemtype="http://schema.org/SiteNavigationElement">
+	    <ul>
+	        
+			<li>
+				
+					<a href="/about">About</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="/articles">Articles</a>
+				 
+			</li>
+	        
+			<li>
+				
+					<a href="/research">Research</a>
+				 
+			</li>
+	        
+	        <li><a href="/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+	        <li class="dosearch"><i class="icon-search"></i> Search</li>
+	    </ul>
+	</nav>
+</div><!-- /.navigation-wrapper -->
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+
+<div class="search-wrapper">
+	<div class="search-form">
+		<input type="text" class="search-field" placeholder="Search...">
+		<i class="icon-remove-sign icon-2x"></i>
+		<ul class="search-results post-list"></ul><!-- /.search-results -->
+	</div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
+
+<header class="masthead" itemscope itemtype="http://schema.org/Organization">
+	<div class="wrap">
+          <!--<a href="" class="site-logo" rel="home" title="Alex's Site" itemprop="url"><img src="/images/site-logo.png" width="200" height="200" alt="Alex's Site logo" class="animated fadeInUp" itemprop="logo"></a>-->
+		<h1 class="site-title animated fadeIn"><a href="">Alex's Site</a></h1>
+		<h2 class="site-description animated fadeIn" itemprop="description">Alex Paino's personal site and blog</h2>
+	</div>
+</header><!-- /.masthead -->
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <article class="hentry" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="entry-wrapper">
+      <header class="entry-header">
+        <span class="entry-tags"></span>
+        
+          <h1 class="entry-title" itemprop="headline">Improving Genetic Programming Performance in Matlab</h1>
+        
+      </header>
+      <footer class="entry-meta">
+        <img src="/images/cropped_prof.jpg" alt="Alex Paino photo" class="author-photo">
+        <span class="author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">By <span itemprop="name" class="fn"><a href="/about" title="About Alex Paino" itemprop="url">Alex Paino</a></span></span>
+        <span class="entry-date date published"><time datetime="2013-11-01T17:32:59+01:00" itemprop="datePublished"><i class="icon-calendar-empty"></i> November 01, 2013</time></span>
+        
+        
+        <span><a href="/improving-GP-performance-in-matlab" rel="bookmark" title="Improving Genetic Programming Performance in Matlab" itemprop="url"><i class="icon-link"></i> Permalink</a></span>
+      </footer>
+      <div class="entry-content" itemprop="description">
+        <h1 id="intro">Intro</h1>
+<p>I have been implementing a 
+<a href="http://en.wikipedia.org/wiki/Genetic_programming">Genetic Programming</a> (GP) 
+algorithm for my research and have run into, and overcome, some severe 
+performance issues. I am writing up the steps I took to achieve a usable level 
+of performance so that it might be useful to others trying to write a GP 
+algorithm (or just evaluate arithmetic expression trees) in Matlab.</p>
+
+<h1 id="the-problem">The Problem</h1>
+<p>In my research I am using GP to evolve image feature extraction algorithms with 
+a structure similar to the 
+<a href="http://en.wikipedia.org/wiki/Histogram_of_oriented_gradients">Histogram of Oriented Gradients</a> (HOG) 
+and <a href="http://en.wikipedia.org/wiki/Local_binary_patterns">Local Binary Pattern</a> 
+(LBP) algorithms. Each candidate solution in the algorithm is represented as 
+an arithmetic expression tree that acts on a sub=cell of the image of 
+predetermined size. To compute a feature vector for a given image, the 
+expression represented by the tree must be evaluated for a sub=cell centered 
+on every pixel in the image. Thus, an expression must be evaluated 128^2 times 
+for an image with the dimensions 128x128. Additionally, GP usually calls for a 
+population of at least 100 such candidate solutions, each of which must be 
+evaluated on every image in a training set for at least 10 generations. As if 
+this weren&#8217;t enough, my implementation required me to evaluate the fitness 
+function over a training set of 500 images.</p>
+
+<p>For those keeping score, that means the algorithm will perform at least 
+128*128*100*10*500 = <strong>8.192 billion parse tree evaluations</strong>! And that&#8217;s 
+before considering the possibility of having multiple features per candidate 
+solution, which I have limited to 10. So in order for the algorithm to ever 
+finish running, the evaluation of the expression better be very efficient.</p>
+
+<h1 id="initial-approach-recursive-evaluation">Initial Approach: Recursive Evaluation</h1>
+<p>Evaluating a parse tree naturally lends itself to a recursive solution, so 
+that was the first approach I took. However, when I first had this approach 
+working, I realized it was way too slow to work. As in several orders of 
+magnitude too slow. To get a handle on why, I ran Matlab&#8217;s Profile tool on a 
+candidate solution running on one image, which gave me the following output:
+<img src="/images/" alt="Initial Performance Profile" /></p>
+
+<p>See that full blue bar next to &#8220;TODO: function call&#8221;? That means that almost 
+all of the execution time was being spent in context switches due to the 
+ridiculous number of recursive function calls.</p>
+
+<h1 id="second-attempt-building-string-expressions-and-using-eval">Second Attempt: Building String Expressions and Using eval()</h1>
+<p>After viewing the profile results from my initial approach, I begun thinking 
+of ways to simplify the parse tree once before evaluating it. The solution I 
+came up with was to build the arithmetic expression represented by a parse 
+tree as a string, and then evaluate this expression using Matlab&#8217;s <code>eval()</code> 
+function.
+<img src="/images/" alt="Second Attempt Performance Profile" /></p>
+
+<h1 id="getting-closer-building-anonymous-functions-using-eval">Getting Closer: Building Anonymous Functions using eval()</h1>
+<p>While the previous iteration drastically improved performance, it would still 
+take weeks to run even a small version of the algorithm.
+<img src="/images/" alt="Getting Closer Performance Profile" /></p>
+
+<h1 id="solution-build-a-single-multivariate-anonymous-function">Solution: Build a Single Multivariate Anonymous Function</h1>
+<p>After reviewing the profile results from the previous run, I realized that 
+most of the run time was being taken up my overtime involved with executing 
+anonymous functions. Thus, in order to reduce the number of anonymous function 
+calls I vector=ized the functions by having one anonymous function calculate 
+all of the features for a parse tree. This greatly reduced the overhead of the 
+anonymous functions by a factor of 10 (the limit on the number of features 
+allowed per tree). 
+<img src="/images/" alt="Final Performance Profile" /></p>
+
+<h1 id="conclusion">Conclusion</h1>
+<p>If anyone has any other suggestions for improving performance in this 
+application, please let me know. If you are interested in reading up on my 
+research more, please see <a href="/images/huhro.png">this</a>. Thanks for reading.</p>
+
+        
+      </div><!-- /.entry-content -->
+    </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+      
+    </nav><!-- /.pagination -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2013 Alex Paino. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">So Simple Theme</a>.</span>
+<div class="social-icons">
+	
+	<a href="http://facebook.com/atpaino" title="Alex Paino on Facebook" target="_blank"><i class="icon-facebook icon-2x"></i></a>
+	<a href="https://plus.google.com/114327884541884793605" title="Alex Paino on Google+" target="_blank"><i class="icon-google-plus icon-2x"></i></a>
+	<a href="http://linkedin.com/in/atpaino" title="Alex Paino on LinkedIn" target="_blank"><i class="icon-linkedin icon-2x"></i></a>
+	
+	
+	
+	<a href="http://github.com/atpaino" title="Alex Paino on Github" target="_blank"><i class="icon-github icon-2x"></i></a>
+	
+</div><!-- /.social-icons -->
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Jekyll Simple Search option -->
+<script>
+  $(document).ready(function() {
+      $('.search-field').simpleJekyllSearch({
+          jsonFile : '/search.json',
+          searchResults : '.search-results',
+          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          noResults: '<p>Nothing found.</p>'
+        });
+  });
+
+  (function( $, window, undefined ) {
+    
+     var bs = {
+          close: $(".icon-remove-sign"),
+          searchform: $(".search-form"),
+          canvas: $("body"),
+          dothis: $('.dosearch')
+      };
+    
+    bs.dothis.on('click', function() {
+      $('.search-wrapper').css({ display: "block" });
+      bs.searchform.toggleClass('active');
+      bs.searchform.find('input').focus();
+      bs.canvas.toggleClass('search-overlay');
+    });
+    
+      bs.close.on('click', function() {
+        $('.search-wrapper').removeAttr( 'style' );
+        bs.searchform.toggleClass('active');
+        bs.canvas.removeClass('search-overlay');
+    });
+  })( jQuery, window );
+</script>
+
+
+	        
+
+</body>
+</html>

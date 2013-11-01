@@ -1,0 +1,48 @@
+title:            Alex's Site
+description:      Alex Paino's personal site and blog
+logo:             site-logo.png
+disqus_shortname:
+search:           true
+#Comment out url when working locally to resolve base urls correctly
+#url:              http://atpaino.com
+
+# Owner/author information
+owner:
+  name:           Alex Paino
+  avatar:         cropped_prof.jpg
+  email:          atpaino@gmail.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:
+  facebook: atpaino
+  github: atpaino
+  linkedin: atpaino
+  instagram:
+  tumblr:
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:    "https://plus.google.com/114327884541884793605"
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# Links to include in top navigation
+# For external links add external: true
+links:
+  - title: About
+    url: /about
+  - title: Articles
+    url: /articles
+  - title: Research
+    url: /research
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/Chicago
+pygments:    true
+markdown:    kramdown
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title
+
+search: true
