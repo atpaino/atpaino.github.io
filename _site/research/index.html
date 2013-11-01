@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Research &#8211; atpaino site</title>
+<title>atpaino site &#8211; Research</title>
 <meta name="description" content="Alex Paino's personal site and blog">
 
 
@@ -82,7 +82,7 @@
 				 
 			</li>
 	        
-	        <li><a href="/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+                <!--<li><a href="/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>-->
 	        <li class="dosearch"><i class="icon-search"></i> Search</li>
 	    </ul>
 	</nav>
@@ -127,10 +127,20 @@ algorithms. </p>
 <h1 id="past-work-and-publications">Past Work and Publications</h1>
 
 <h2 id="section">2013</h2>
-<p>Put SPIE Paper here</p>
+
+<h3 id="using-evolutionary-computation-to-optimize-an-svm-used-in-detecting-buried-objects-in-flir-imageryhttpdxdoiorg101117122014774"><a href="http://dx.doi.org/10.1117/12.2014774">Using evolutionary computation to optimize an SVM used in detecting buried objects in FLIR imagery</a></h3>
+
+<h4 id="authors-paino-alex-popescu-mihail-keller-james-stone-kevin"><em>Authors: Paino, Alex; Popescu, Mihail; Keller, James; Stone, Kevin</em></h4>
+
+<p><strong>Abstract:</strong> In this paper we describe an approach for optimizing the parameters of a Support Vector Machine (SVM) as part of an algorithm used to detect buried objects in forward looking infrared (FLIR) imagery captured by a camera installed on a moving vehicle. The overall algorithm consists of a spot-finding procedure (to look for potential targets) followed by the extraction of several features from the neighborhood of each spot. The features include local binary pattern (LBP) and histogram of oriented gradients (HOG) as these are good at detecting texture classes. Finally, we project and sum each hit into UTM space along with its confidence value (obtained from the SVM), producing a confidence map for ROC analysis. In this work, we use an Evolutionary Computation Algorithm (ECA) to optimize various parameters involved in the system, such as the combination of features used, parameters on the Canny edge detector, the SVM kernel, and various HOG and LBP parameters. To validate our approach, we compare results obtained from an SVM using parameters obtained through our ECA technique with those previously selected by hand through several iterations of &#8220;guess and check&#8221;.</p>
 
 <h2 id="section-1">2012</h2>
-<p>Put CISDA Paper here</p>
+
+<h3 id="detection-of-buried-objects-in-flir-imaging-using-mathematical-morphology-and-svmhttpieeexploreieeeorgstampstampjsptparnumber6291520isnumber6291498"><a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=6291520&amp;isnumber=6291498">Detection of buried objects in FLIR imaging using mathematical morphology and SVM</a></h3>
+
+<h4 id="authors-popescu-mihail-paino-alex-stone-kevin-keller-james"><em>Authors: Popescu, Mihail; Paino, Alex; Stone, Kevin; Keller, James</em></h4>
+
+<p><strong>Abstract:</strong> In this paper we describe a method for detecting buried objects of interest using a forward looking infrared camera (FLIR) installed on a moving vehicle. Infrared (IR) detection of buried targets is based on the thermal gradient between the object and the surrounding soil. The processing of FILR images consists in a spot-finding procedure that includes edge detection, opening and closing. Each spot is then described using texture features such as histogram of gradients (HOG) and local binary patterns (LBP) and assigned a target confidence using a support vector machine (SVM) classifier. Next, each spot together with its confidence is projected and summed in the UTM space. To validate our approach, we present results obtained on 6 one mile long runs recorded with a long wave IR (LWIR) camera installed on a moving vehicle.</p>
 
       </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
