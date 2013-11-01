@@ -4,7 +4,7 @@ logo:             site-logo.png
 disqus_shortname:
 search:           true
 #Comment out url when working locally to resolve base urls correctly
-#url:              http://atpaino.com
+url:              http://atpaino.com
 
 # Owner/author information
 owner:
