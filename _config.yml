@@ -37,7 +37,9 @@ links:
   - title: Research
     url: /research
   - title: Favorite Papers
-    url: /favorite_papers
+    url: /favorite-papers
+  - title: Past Projects
+    url: /past-projects
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/Chicago
