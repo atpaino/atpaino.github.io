@@ -1,8 +1,8 @@
-title:            atpaino site
+title:            atpaino
 description:      Alex Paino's personal site and blog
 logo:             site-logo.png
 disqus_shortname:
-search:           true
+search:           false
 #Comment out url when working locally to resolve base urls correctly
 url:              http://atpaino.com
 
@@ -32,12 +32,12 @@ bing_verify:
 links:
   - title: About
     url: /about
-  - title: Articles
-    url: /articles
+#  - title: Articles
+#    url: /articles
   - title: Research
     url: /research
-  - title: Favorite Papers
-    url: /favorite-papers
+#  - title: Favorite Papers
+#    url: /favorite-papers
   - title: Past Projects
     url: /past-projects
 
