@@ -20,6 +20,12 @@ Code is available on GitHub along with a more thorough description [here](https:
 Articles
 -----------
 
+[**ML Experiments at Sift Science, Part 2: Analyzing Thousands of Models**](https://engineering.siftscience.com/ml-experiments-pt-2-analyzing-thousands-of-models/)
+
+*December 2016, Sift Science Blog*
+
+The second in a three-part series on ML experimentation at Sift Science, this post describes how we efficiently and effectively analyze the results of ML experiments involving several thousand models.
+
 [**ML Experiments at Sift Science, Part 1: Minimizing Bias**](https://engineering.siftscience.com/ml-experiments-part-1-minimizing-bias/)
 
 *December 2016, Sift Science Blog*
