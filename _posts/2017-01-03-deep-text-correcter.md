@@ -2,7 +2,12 @@
 layout: post
 title: Deep Text Correcter
 modified: 2017-01-03
+excerpt: In this post I describe Deep Text Correcter, a system built on deep learning that is capable of correcting small grammatical errors in short, message-like text.
 ---
+
+[**Code**](https://github.com/atpaino/deep-text-correcter)
+|
+[**Demo**](/dtc.html)
 
 While context-sensitive spell-check systems (such as [AutoCorrect](https://en.wikipedia.org/wiki/Autocorrection)) are able to automatically correct a large number of input errors in instant messaging, email, and SMS messages, they are unable to correct even simple grammatical errors. 
 For example, the message "I'm going to store" would be unaffected by typical autocorrection systems, when the user most likely intendend to communicate "I'm going to _the_ store". 
@@ -10,7 +15,8 @@ For example, the message "I'm going to store" would be unaffected by typical aut
 Inspired by recent advancements in NLP driven by deep learning (such as those in Neural Machine Translation by [Bahdanau et al., 2014](http://arxiv.org/abs/1409.0473)), I decided to try training a neural network to solve this problem. 
 Specifically, I set out to construct sequence-to-sequence models capable of processing a sample of conversational written English and generating a corrected version of that sample. 
 In this post I'll describe how I created this "Deep Text Correcter" system and present some encouraging initial results. 
-All code is available on GitHub [here](https://github.com/atpaino/deep-text-correcter). 
+
+All code is available on GitHub [here](https://github.com/atpaino/deep-text-correcter), and a demo of this system is live [here](/dtc.html).
 
 ## Correcting Grammatical Errors with Deep Learning
 The basic idea behind this project is that we can generate large training datasets for the task of grammar correction by starting with grammatically correct samples and introducing small errors to produce input-output pairs.
@@ -129,7 +135,7 @@ Anyone who tends to make errors similar to those the model has been trained on c
 ### Examples
 
 In addition to the encouraging aggregate performance of this model, we can see that its is capable of generalizing beyond the specific language styles present in the Movie-Dialogs corpus by testing it on a few fabricated, grammatically incorrect sentences. 
-Below are a few examples.
+Below are a few examples, but you can try out your own examples using the demo [here](/dtc.html).
 
 **Decoding a sentence with a missing article:**
 
@@ -153,5 +159,8 @@ The biggest thing holding the project back is the lack of a large dataset -- the
 Unfortunately, I am not aware of any publicly available dataset of (mostly) grammatically correct English. 
 A close proxy could be comments in a "higher quality" online forum, such as Hacker News or certain subreddits. 
 I may try this next. 
+
+Given a larger dataset, I would also like to try to introduce many different kinds of errors into the training samples. 
+The perturbations used thus far are limited to fairly simple grammatical mistakes; it would be very interesting to see if the model could learn to correct somewhat more subtle mistakes, such as subject-verb agreement. 
 
 On the application front, I could see this system eventually being accessible via a "correction" API that could be leveraged in a variety of messaging applications. 

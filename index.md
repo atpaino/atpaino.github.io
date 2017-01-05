@@ -13,8 +13,8 @@ Projects
 -----------
 [**Deep Text Correcter**](https://github.com/atpaino/deep-text-correcter)
 
-Using sequence-to-sequence models to automatically correct simple errors in conversational written English. 
-The latest results of the project show that it significantly outperforms an identity function baseline. 
+Uses sequence-to-sequence models to automatically correct simple errors in conversational written English. 
+The latest results of the project (as described in [this post](/2017/01/03/deep-text-correcter.html)) show that it significantly outperforms an identity function baseline. 
 Code is available on GitHub along with a more thorough description [here](https://github.com/atpaino/deep-text-correcter).
 
 Articles

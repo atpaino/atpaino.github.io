@@ -210,3 +210,26 @@ pre {
         border: 1px solid black;
         }
 }
+
+.demo-text {
+    padding: 2px 2px;
+    margin: 0px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-weight: 300;
+    color: $text-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
+}
+
+.subtle-text {
+    color: $grey-color;
+    font-style: italic;
+    font-weight: 200;
+}
+
