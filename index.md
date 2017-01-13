@@ -11,14 +11,20 @@ Prior to joining Sift, I graduated from the University of Missouri in 2014, wher
 
 Projects
 -----------
-[**Deep Text Correcter**](https://github.com/atpaino/deep-text-correcter)
+[**Deep Text Corrector**](https://github.com/atpaino/deep-text-corrector)
 
 Uses sequence-to-sequence models to automatically correct simple errors in conversational written English. 
 The latest results of the project (as described in [this post](/2017/01/03/deep-text-correcter.html)) show that it significantly outperforms an identity function baseline. 
-Code is available on GitHub along with a more thorough description [here](https://github.com/atpaino/deep-text-correcter).
+Code is available on GitHub along with a more thorough description [here](https://github.com/atpaino/deep-text-corrector).
 
 Articles
 -----------
+
+[**ML Experiments at Sift Science, Pt. 3: Building the Right Tools**](https://engineering.siftscience.com/ml-experiments-pt-3-tooling/)
+
+*January 2017, Sift Science Blog*
+
+The finale of this series, this post discusses tools we have built that make it easy to correctly conduct and analyze experiments, with an emphasis on improving the productivity of the larger engineering organization.
 
 [**ML Experiments at Sift Science, Part 2: Analyzing Thousands of Models**](https://engineering.siftscience.com/ml-experiments-pt-2-analyzing-thousands-of-models/)
 
