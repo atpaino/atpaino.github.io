@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Deep Text Correcter
+title: Deep Text Corrector
 modified: 2017-01-03
-excerpt: In this post I describe Deep Text Correcter, a system built on deep learning that is capable of correcting small grammatical errors in short, message-like text.
+excerpt: In this post I describe Deep Text Corrector, a system built on deep learning that is capable of correcting small grammatical errors in short, message-like text.
 ---
 
-[**Code**](https://github.com/atpaino/deep-text-correcter)
+[**Code**](https://github.com/atpaino/deep-text-corrector)
 |
 [**Demo**](/dtc.html)
 
@@ -14,16 +14,16 @@ For example, the message "I'm going to store" would be unaffected by typical aut
 
 Inspired by recent advancements in NLP driven by deep learning (such as those in Neural Machine Translation by [Bahdanau et al., 2014](http://arxiv.org/abs/1409.0473)), I decided to try training a neural network to solve this problem. 
 Specifically, I set out to construct sequence-to-sequence models capable of processing a sample of conversational written English and generating a corrected version of that sample. 
-In this post I'll describe how I created this "Deep Text Correcter" system and present some encouraging initial results. 
+In this post I'll describe how I created this "Deep Text Corrector" system and present some encouraging initial results. 
 
-All code is available on GitHub [here](https://github.com/atpaino/deep-text-correcter), and a demo of this system is live [here](/dtc.html).
+All code is available on GitHub [here](https://github.com/atpaino/deep-text-corrector), and a demo of this system is live [here](/dtc.html).
 
 ## Correcting Grammatical Errors with Deep Learning
 The basic idea behind this project is that we can generate large training datasets for the task of grammar correction by starting with grammatically correct samples and introducing small errors to produce input-output pairs.
 The details of how we construct these datasets, train models using them, and produce predictions for this task are described below.
 
 ### Datasets
-To create a dataset for training Deep Text Correcter models, I started with a large collection of mostly grammatically correct samples of conversational written English. 
+To create a dataset for training Deep Text Corrector models, I started with a large collection of mostly grammatically correct samples of conversational written English. 
 The primary dataset considered in this project is the [Cornell Movie-Dialogs Corpus](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html), which contains over 300k lines from movie scripts.
 This was the largest collection of conversational written English I could find that was (mostly) grammatically correct. 
 
@@ -104,7 +104,7 @@ Empirically, and intuitively, this appears to be an appropriate assumption, as t
 
 ## Experiments and Results
 
-Below are some anecdotal and aggregate results from experiments using the Deep Text Correcter model with the [Cornell Movie-Dialogs Corpus](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). 
+Below are some anecdotal and aggregate results from experiments using the Deep Text Corrector model with the [Cornell Movie-Dialogs Corpus](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). 
 The dataset consists of 304,713 lines from movie scripts, of which 243,768 lines were used to train the model and 30,474 lines each were used for the validation and testing sets. 
 For the training set, 2 samples were drawn per line in the corpus, as described above. 
 The sets were selected such that no lines from the same movie were present in both the training and testing sets.
@@ -118,7 +118,7 @@ Below are reported the corpus BLEU scores (as computed by [NLTK](http://www.nltk
 The baseline used here is simply the identity function, which assumes no errors exist in the input; the motivation for this is to test whether the introduction of the trained model could add value to an existing system with no grammar-correction system in place. 
 
 Encouragingly, **the trained model outperforms this baseline** for all bucket sizes in terms of accuracy, and outperforms all but one in terms of BLEU score. 
-This tells us that applying the Deep Text Correcter model to a potentially errant writing sample would, on average, result in a more grammatically correct writing sample. 
+This tells us that applying the Deep Text Corrector model to a potentially errant writing sample would, on average, result in a more grammatically correct writing sample. 
 Anyone who tends to make errors similar to those the model has been trained on could therefore benefit from passing their messages through this model.
 
 
@@ -164,3 +164,5 @@ Given a larger dataset, I would also like to try to introduce many different kin
 The perturbations used thus far are limited to fairly simple grammatical mistakes; it would be very interesting to see if the model could learn to correct somewhat more subtle mistakes, such as subject-verb agreement. 
 
 On the application front, I could see this system eventually being accessible via a "correction" API that could be leveraged in a variety of messaging applications. 
+
+[Comments on HN](https://news.ycombinator.com/item?id=13350972)
