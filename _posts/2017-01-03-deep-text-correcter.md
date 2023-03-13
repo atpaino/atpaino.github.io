@@ -7,7 +7,6 @@ excerpt: In this post I describe Deep Text Corrector, a system built on deep lea
 
 [**Code**](https://github.com/atpaino/deep-text-corrector)
 |
-[**Demo**](/dtc.html)
 
 While context-sensitive spell-check systems (such as [AutoCorrect](https://en.wikipedia.org/wiki/Autocorrection)) are able to automatically correct a large number of input errors in instant messaging, email, and SMS messages, they are unable to correct even simple grammatical errors. 
 For example, the message "I'm going to store" would be unaffected by typical autocorrection systems, when the user most likely intendend to communicate "I'm going to _the_ store". 
@@ -16,7 +15,7 @@ Inspired by recent advancements in NLP driven by deep learning (such as those in
 Specifically, I set out to construct sequence-to-sequence models capable of processing a sample of conversational written English and generating a corrected version of that sample. 
 In this post I'll describe how I created this "Deep Text Corrector" system and present some encouraging initial results. 
 
-All code is available on GitHub [here](https://github.com/atpaino/deep-text-corrector), and a demo of this system is live [here](/dtc.html).
+All code is available on GitHub [here](https://github.com/atpaino/deep-text-corrector).html).
 
 ## Correcting Grammatical Errors with Deep Learning
 The basic idea behind this project is that we can generate large training datasets for the task of grammar correction by starting with grammatically correct samples and introducing small errors to produce input-output pairs.
@@ -135,7 +134,7 @@ Anyone who tends to make errors similar to those the model has been trained on c
 ### Examples
 
 In addition to the encouraging aggregate performance of this model, we can see that its is capable of generalizing beyond the specific language styles present in the Movie-Dialogs corpus by testing it on a few fabricated, grammatically incorrect sentences. 
-Below are a few examples, but you can try out your own examples using the demo [here](/dtc.html).
+Below are a few examples.
 
 **Decoding a sentence with a missing article:**
 
